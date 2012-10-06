@@ -1,0 +1,23 @@
+{% extends "posts/base.html" %}
+
+{% load bootstrap_toolkit %}
+
+{% block content %}
+    <h1>Tus Boludeces:</h1>
+
+    {% for post in posts %}
+    <div class="row">
+    <div class="span4">
+        </div>
+        <div class="span4">
+            <div class="well">
+            <h3>Autor: {{ post.author.username }}</h3>
+            <p>{{ post.message }}</p>
+        </div>
+        </div>
+        <div class="span4">
+        </div>
+    </div>
+
+    {% endfor %}
+{% endblock %}

@@ -1,4 +1,7 @@
 # Django settings for MicroBlog project.
+import os.path
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -11,17 +14,17 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'SQLTesting01',
+        'NAME': 'db/Microblog.db',
         # Or path to database file if using sqlite3.
         'USER': '',
         # Not used with sqlite3.
         'PASSWORD': '',
         # Not used with sqlite3.
-        'HOST': '192.168.0.122',
+        'HOST': '',
         # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '3306',
+        'PORT': '',
         # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -93,6 +96,10 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_DIRS = [
+    os.path.join(PROJECT_ROOT, "templates"),
+]
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -123,9 +130,16 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admindocs',
+
+    # Agregados lib Python:
+    'django_extensions',
+    'bootstrap_toolkit',
+
+    #Mi Aplicacion
+    'apps.post'
 )
 
 # A sample logging configuration. The only tangible logging
@@ -156,3 +170,11 @@ LOGGING = {
         },
     }
 }
+
+BOOTSTRAP_BASE_URL      = 'http://twitter.github.com/bootstrap/assets/'
+#BOOTSTRAP_BASE_URL      = '../static/'
+BOOTSTRAP_CSS_BASE_URL  = BOOTSTRAP_BASE_URL + 'css/'
+BOOTSTRAP_CSS_URL       = BOOTSTRAP_CSS_BASE_URL + 'bootstrap.css'
+BOOTSTRAP_JS_BASE_URL   = BOOTSTRAP_BASE_URL + 'js/'
+# Enable for single bootstrap.js file
+#BOOTSTRAP_JS_URL        = BOOTSTRAP_JS_BASE_URL + 'bootstrap.js'

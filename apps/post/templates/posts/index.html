@@ -1,0 +1,53 @@
+{% extends "posts/base.html" %}
+
+{% block content %}
+
+    <div class="well">
+        <h1>Bienvenidos a Intento de Pajarera 1</h1>
+        <p>Intento de Pajarera 1 es un MicroBlog donde podras escribir lo que se te ocurra y no seras censurado</p>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        <!--<p><a class="btn btn-primary" href="{% url write_new_post %}">Escribir un nuevo Post &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/read_posts/">Leer Post &raquo;</a></p>
+        <p><a class="btn btn-primary" href="/admin/">Ingresar aladministrador de Django &raquo;</a></p>-->
+
+    </div>
+
+    <div class="row">
+        <div class="span4">
+        <div class="well">
+            <h3>Por que postear</h3>
+            <p>Esta pagina es pensada para que puedas
+            divertirte escribiendo las tonterias que se ocurran y quieras contarlas</p>
+            <p><a class="btn btn-primary" href="{% url write_new_post %}">Escribir YA!</a></p>
+            <!--<iframe src="{% url read_posts %}"></iframe>-->
+        </div>
+        </div>
+        <div class="span4">
+        <div class="well">
+            <h3>La Linea de Timepo</h3>
+            <p>En la linea de tiempo podras encontrar todas las publicacione suqe has realizado</p>
+            </br>
+            <p><a class="btn btn-primary" href="/read_posts/">Me aburro quiero leer algo &raquo;</a></p>
+            <!--<iframe src="{% url write_new_post %}"></iframe>-->
+        </div>
+        </div>
+        <div class="span4">
+        <div class="well">
+            <h3>Admin de Django</h3>
+            <p>Podes si sos administrador Django tiene un Admin muy piola para vos</p>
+            </br>
+            </br>
+            <p><a class="btn btn-primary" href="/admin/">Django Admin &raquo;</a></p>
+            <!--<iframe src="/admin/"></iframe>-->
+        </div>
+        </div>
+    </div>
+
+    <p>Espero lo que lo disfrutes mucho.</p>
+
+{% endblock %}
