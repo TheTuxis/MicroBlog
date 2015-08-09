@@ -1,4 +1,4 @@
 MicroBlog
 =========
 
-Aprendiendo Django
+Ejemplo basico de Django
